@@ -47,7 +47,7 @@ const modules = `<?xml version="1.0" encoding="UTF-8"?>
 
 
 fs.writeFileSync(path.join(root, '.idea', `${appName}.iml`), config);
-fs.writeFileSync(path.join(root, '.idea', 'modules.iml'), modules);
+fs.writeFileSync(path.join(root, '.idea', 'modules.xml'), modules);
 
 
 const gitignorePath = path.join(root, '.gitignore');
@@ -57,6 +57,6 @@ if (!fs.existsSync(gitignorePath)) {
   let gitignore = fs.readFileSync(gitignorePath, 'utf8');
   if (!/\.idea\/*/g.test(gitignore)) {
     gitignore += '\n.idea/\n';
+    fs.writeFileSync(gitignorePath, gitignore);
   }
-  fs.writeFileSync(gitignorePath, gitignore);
 }
