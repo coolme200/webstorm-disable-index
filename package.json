@@ -10,7 +10,7 @@
     "eslint": "2",
     "eslint-config-egg": "2"
   },
-  "homepage": "",
+  "homepage": "https://github.com/coolme200/webstorm-disable-index",
   "scripts": {
     "postinstall": "node disable.js"
   }
