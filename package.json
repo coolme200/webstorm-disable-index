@@ -1,0 +1,17 @@
+{
+  "name": "webstorm-disable-index",
+  "version": "1.0.1",
+  "files": ["disable.js"],
+  "homepage": "",
+  "dependencies": {
+    "mkdirp": "~0.5.1"
+  },
+  "devDependencies": {
+    "eslint": "2",
+    "eslint-config-egg": "2"
+  },
+  "homepage": "",
+  "scripts": {
+    "postinstall": "node disable.js"
+  }
+}
