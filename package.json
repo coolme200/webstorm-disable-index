@@ -1,6 +1,6 @@
 {
   "name": "webstorm-disable-index",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "files": ["disable.js"],
   "homepage": "",
   "dependencies": {
