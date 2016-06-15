@@ -11,10 +11,12 @@ if (__dirname.indexOf('.npminstall') >= 0) {
   root = path.join(__dirname, '../');
 }
 
+const settingRoot = '.idea';
 const appName = path.basename(root);
+const settingPath = path.join(root, settingRoot);
 
-if (!fs.existsSync(path.join(root, '.idea'))) {
-  mkdirp.sync(path.join(root, '.idea'));
+if (!fs.existsSync(settingPath)) {
+  mkdirp.sync(settingPath);
 }
 
 const config = `<?xml version="1.0" encoding="UTF-8"?>
@@ -44,6 +46,17 @@ const modules = `<?xml version="1.0" encoding="UTF-8"?>
 </project>`;
 
 
-
 fs.writeFileSync(path.join(root, '.idea', `${appName}.iml`), config);
-fs.writeFileSync(path.join(root, '.idea', `modules.iml`), modules);
+fs.writeFileSync(path.join(root, '.idea', 'modules.iml'), modules);
+
+
+const gitignorePath = path.join(root, '.gitignore');
+if (!fs.existsSync(gitignorePath)) {
+  fs.writeFileSync(gitignorePath, '.idea/');
+} else {
+  let gitignore = fs.readFileSync(gitignorePath, 'utf8');
+  if (!/\.idea\/*/g.test(gitignore)) {
+    gitignore += '\n.idea/\n';
+  }
+  fs.writeFileSync(gitignorePath, gitignore);
+}
