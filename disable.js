@@ -5,11 +5,19 @@ const path = require('path');
 const mkdirp = require('mkdirp');
 
 let root;
+
 if (__dirname.indexOf('.npminstall') >= 0) {
+  // ${appName}/node_modules/.npminstall/webstorm-disable-index/1.0.7/webstorm-disable-index
   root = path.join(__dirname, '../../../../../');
+} else if (/\/\.\d+(\.\d+)+@/.test(__dirname)) {
+  // ${appName}/node_modules/.1.0.7@webstorm-disable-index
+  root = path.join(__dirname, '../../');
 } else {
+  // ${appName}/node_modules/webstorm-disable-index
   root = path.join(__dirname, '../');
 }
+
+console.log('[webstorm-disable-index] write files at %s', root);
 
 const settingRoot = '.idea';
 const appName = path.basename(root);
@@ -45,10 +53,15 @@ const modules = `<?xml version="1.0" encoding="UTF-8"?>
   </component>
 </project>`;
 
+const misc = `<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JavaScriptSettings">
+    <option name="languageLevel" value="ES6" />
+  </component>`;
 
+fs.writeFileSync(path.join(root, '.idea', 'misc.xml'), misc);
 fs.writeFileSync(path.join(root, '.idea', `${appName}.iml`), config);
 fs.writeFileSync(path.join(root, '.idea', 'modules.xml'), modules);
-
 
 const gitignorePath = path.join(root, '.gitignore');
 if (!fs.existsSync(gitignorePath)) {
