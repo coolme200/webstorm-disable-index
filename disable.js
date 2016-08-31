@@ -59,6 +59,15 @@ const misc = `<?xml version="1.0" encoding="UTF-8"?>
     <option name="languageLevel" value="ES6" />
   </component>`;
 
+const es6 = `<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JavaScriptLibraryMappings">
+    <includedPredefinedLibrary name="ECMAScript 6" />
+  </component>
+</project>
+`;
+
+fs.writeFileSync(path.join(root, '.idea', 'jsLibraryMappings.xml'), es6);
 fs.writeFileSync(path.join(root, '.idea', 'misc.xml'), misc);
 fs.writeFileSync(path.join(root, '.idea', `${appName}.iml`), config);
 fs.writeFileSync(path.join(root, '.idea', 'modules.xml'), modules);
