@@ -57,7 +57,9 @@ const misc = `<?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="JavaScriptSettings">
     <option name="languageLevel" value="ES6" />
-  </component>`;
+  </component>
+</project>
+`;
 
 const es6 = `<?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
