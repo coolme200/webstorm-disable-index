@@ -17,6 +17,12 @@ if (__dirname.indexOf('.npminstall') >= 0) {
   root = path.join(__dirname, '../');
 }
 
+const nmIndex = root.indexOf('node_modules');
+if (nmIndex !== -1) {
+  console.log('[webstorm-disable-index] %s', __dirname);
+  root = root.substring(0, nmIndex);
+}
+
 console.log('[webstorm-disable-index] write files at %s', root);
 
 const settingRoot = '.idea';
