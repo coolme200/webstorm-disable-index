@@ -1,17 +1,47 @@
 {
   "name": "webstorm-disable-index",
   "version": "1.0.11",
-  "files": ["disable.js"],
-  "homepage": "",
+  "description": "auto disable webstorm index for node_modules",
+  "main": "lib/command.js",
+  "bin": {
+    "webstorm-auto-config": "bin/webstorm-auto-config.js"
+  },
+  "files": [
+    "bin",
+    "lib",
+    "index.js"
+  ],
   "dependencies": {
-    "mkdirp": "~0.5.1"
+    "co": "^4.6.0",
+    "lodash": "^4.17.2",
+    "mkdirp": "^0.5.1",
+    "mz": "^2.6.0",
+    "object-path": "^0.11.3",
+    "xml-mapping": "^1.7.1"
   },
   "devDependencies": {
-    "eslint": "2",
-    "eslint-config-egg": "2"
+    "autod": "^2.7.1",
+    "egg-bin": "^1.9.1",
+    "egg-ci": "^1.1.0",
+    "eslint": "^3.12.2",
+    "eslint-config-egg": "^3.2.0"
+  },
+  "scripts": {
+    "postinstall": "node bin/webstorm-auto-config.js",
+    "ci": "npm run lint && npm run cov",
+    "test": "npm run lint -- --fix && npm run test-local",
+    "test-local": "egg-bin test",
+    "cov": "egg-bin cov",
+    "lint": "eslint .",
+    "autod": "autod"
+  },
+  "ci": {
+    "version": "4, 6"
   },
   "homepage": "https://github.com/coolme200/webstorm-disable-index",
-  "scripts": {
-    "postinstall": "node disable.js"
-  }
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:coolme200/webstorm-disable-index.git"
+  },
+  "license": "MIT"
 }

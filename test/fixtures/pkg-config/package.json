@@ -1,0 +1,10 @@
+{
+  "name": "pkg-config",
+  "version": "1.0.0",
+  "config": {
+    "webstorm-auto-config": {
+      "node_modules": true,
+      "index": ["egg", "egg-init"]
+    }
+  }
+}
