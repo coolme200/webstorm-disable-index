@@ -3,9 +3,6 @@
   "version": "1.0.11",
   "description": "auto disable webstorm index for node_modules",
   "main": "lib/command.js",
-  "bin": {
-    "webstorm-auto-config": "bin/webstorm-auto-config.js"
-  },
   "files": [
     "bin",
     "lib",
