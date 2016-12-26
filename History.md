@@ -1,4 +1,17 @@
 
+1.1.0 / 2016-12-26
+==================
+
+  * test: mv to lib dir
+  * feat: rename config && bin
+  * feat: remove unused deps
+  * feat: allow package.json not exist
+  * fix: find app root
+  * refactor: support index & append to exist idea config
+  * fix: misc
+  * fix: include es6
+  * fix: new npm install style
+
 1.0.4 / 2016-06-15
 ==================
 
