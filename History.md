@@ -1,4 +1,10 @@
 
+1.1.1 / 2016-12-26
+==================
+
+  * feat: dont ignore .idea
+  * fix: app name should ignore scope
+
 1.1.0 / 2016-12-26
 ==================
 
