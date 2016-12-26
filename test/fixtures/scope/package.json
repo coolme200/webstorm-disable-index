@@ -1,0 +1,10 @@
+{
+  "name": "@ali/scope",
+  "version": "1.0.0",
+  "config": {
+    "webstorm": {
+      "node_modules": true,
+      "index": ["egg", "egg-init"]
+    }
+  }
+}
