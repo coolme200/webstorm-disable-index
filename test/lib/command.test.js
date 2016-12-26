@@ -2,12 +2,12 @@
 
 const path = require('path');
 const assert = require('assert');
-const Command = require('..');
+const Command = require('../..');
 
-describe('test/disable.test.js', () => {
+describe('test/lib/command.test.js', () => {
   it('should create', function* () {
     const command = getCommand();
-    yield command.run(path.join(__dirname, 'fixtures/empty'));
+    yield command.run(path.join(__dirname, '../fixtures/empty'));
     command.expect('modules.xml', '<module filepath="$PROJECT_DIR$/.idea/empty.iml" fileurl="file://$PROJECT_DIR$/.idea/empty.iml"/>');
     command.expect('misc.xml', '<option name="languageLevel" value="ES6"/>');
 
@@ -24,7 +24,7 @@ describe('test/disable.test.js', () => {
 
   it('should append', function* () {
     const command = getCommand();
-    yield command.run(path.join(__dirname, 'fixtures/pkg-config'));
+    yield command.run(path.join(__dirname, '../fixtures/pkg-config'));
     command.expect('modules.xml', '<module filepath="$PROJECT_DIR$/.idea/pkg-config.iml" fileurl="file://$PROJECT_DIR$/.idea/pkg-config.iml"/>');
     command.expect('misc.xml', '<option name="languageLevel" value="ES6"/>');
 
