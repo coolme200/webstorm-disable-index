@@ -39,7 +39,7 @@ describe('test/lib/command.test.js', () => {
     command.expect('pkg-config.iml', '<excludeFolder url="file://$MODULE_DIR$/node_modules"/>');
   });
 
-  it('should support scope', function* () {
+  it('should use base name', function* () {
     const command = getCommand();
     yield command.run(path.join(__dirname, '../fixtures/scope'));
     command.expect('modules.xml', '<module filepath="$PROJECT_DIR$/.idea/scope.iml" fileurl="file://$PROJECT_DIR$/.idea/scope.iml"/>');
