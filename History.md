@@ -1,4 +1,10 @@
 
+1.1.2 / 2017-01-03
+==================
+
+  * fix: use directory base name rather than pkg name
+  * test: add scope test
+
 1.1.1 / 2016-12-26
 ==================
 
