@@ -20,7 +20,9 @@
     "egg-bin": "^1.9.1",
     "egg-ci": "^1.1.0",
     "eslint": "^3.12.2",
-    "eslint-config-egg": "^3.2.0"
+    "eslint-config-egg": "^3.2.0",
+    "rimraf": "^2.6.1",
+    "webstorm-disable-index": "1"
   },
   "scripts": {
     "postinstall": "node bin/webstorm-disable-index.js",
