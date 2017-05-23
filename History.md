@@ -1,4 +1,4 @@
-1.1.3 / 2017-01-03
+1.1.3 / 2017-05-23
 ==================
 
   * test: add project renamed case test
