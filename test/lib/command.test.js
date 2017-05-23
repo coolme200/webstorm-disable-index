@@ -39,6 +39,23 @@ describe('test/lib/command.test.js', () => {
     command.expect('pkg-config.iml', '<excludeFolder url="file://$MODULE_DIR$/node_modules"/>');
   });
 
+    it('should find the right project module name while the project dir has been renamed', function* () {
+        const command = getCommand();
+        yield command.run(path.join(__dirname, '../fixtures/pkg-config-renamed-project-dir'));
+        command.expect('modules.xml', '<module filepath="$PROJECT_DIR$/.idea/pkg-config-renamed-project-dir.iml" fileurl="file://$PROJECT_DIR$/.idea/pkg-config-renamed-project-dir.iml"/>');
+        command.expect('misc.xml', '<option name="languageLevel" value="ES6"/>');
+
+        command.expect('jsLibraryMappings.xml', '<includedPredefinedLibrary name="ECMAScript 6"/>');
+        command.expect('jsLibraryMappings.xml', '<includedPredefinedLibrary name="Node.js Core"/>');
+        command.expect('jsLibraryMappings.xml', '<file url="PROJECT" libraries="{test-DefinitelyTyped,node-DefinitelyTyped,mocha-DefinitelyTyped}"/>');
+        command.expect('jsLibraryMappings.xml', '<excludedPredefinedLibrary name="pkg-config-renamed-project-dir/node_modules"/>');
+
+        command.expect('pkg-config-renamed-project-dir.iml', '<content url="file://$MODULE_DIR$/node_modules/egg"/>');
+        command.expect('pkg-config-renamed-project-dir.iml', '<excludeFolder url="file://$MODULE_DIR$/node_modules"/>');
+        command.expect('pkg-config-renamed-project-dir.iml', '<excludeFolder url="file://$MODULE_DIR$/node_modules/egg/node_modules"/>');
+        command.expect('pkg-config-renamed-project-dir.iml', '<excludeFolder url="file://$MODULE_DIR$/node_modules"/>');
+    });
+
   it('should use base name', function* () {
     const command = getCommand();
     yield command.run(path.join(__dirname, '../fixtures/scope'));

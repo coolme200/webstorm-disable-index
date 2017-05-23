@@ -1,3 +1,8 @@
+1.1.3 / 2017-01-03
+==================
+
+  * test: add project renamed case test
+  * feat: add webstorm-disable-index as devDependencies
 
 1.1.2 / 2017-01-03
 ==================
