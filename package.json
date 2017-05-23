@@ -1,6 +1,6 @@
 {
   "name": "cathay-webstorm-disable-index",
-  "version": "1.1.3",
+  "version": "1.2.0",
   "description": "auto disable webstorm index for node_modules",
   "main": "lib/command.js",
   "files": [
@@ -17,6 +17,7 @@
   },
   "devDependencies": {
     "autod": "^2.7.1",
+    "del": "^2.2.2",
     "egg-bin": "^1.9.1",
     "egg-ci": "^1.1.0",
     "eslint": "^3.12.2",

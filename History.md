@@ -1,3 +1,9 @@
+1.2.0 / 2017-05-23
+==================
+
+  * feat: support casade project using config[modules]
+  * docs: update config[modules] config
+
 1.1.3 / 2017-05-23
 ==================
 

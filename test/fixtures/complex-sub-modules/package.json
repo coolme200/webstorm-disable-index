@@ -1,0 +1,20 @@
+{
+  "name": "complex-sub-modules",
+  "version": "1.0.0",
+  "config": {
+    "webstorm": {
+      "modules": [
+        "empty",
+        "pkg-config",
+        "scope"
+      ],
+      "index": [
+        "egg",
+        "egg-init"
+      ]
+    }
+  },
+  "devDependencies": {
+    "webstorm-disable-index": "1"
+  }
+}
