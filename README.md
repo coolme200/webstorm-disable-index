@@ -25,7 +25,7 @@ usage2: support sub modules
 
 Supposing below webstorm project case:
 
-```
+```bash
 |--- package.json (root)
 |--- node-server
   |-- package.json
