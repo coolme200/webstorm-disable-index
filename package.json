@@ -1,6 +1,6 @@
 {
   "name": "webstorm-disable-index",
-  "version": "1.1.2",
+  "version": "1.2.0",
   "description": "auto disable webstorm index for node_modules",
   "main": "lib/command.js",
   "files": [
